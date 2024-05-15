@@ -1,0 +1,17 @@
+<section class="movies-section-cont">
+    <div class="title-home-cont">
+        <h2>{{title}}</h2>
+    </div>
+    <div class="list-movies-cont">
+        @if (movieList.length > 0) {
+            @for (movie of movieList; track movie.id) {
+                <div class="movie-card-cont">
+                    <app-movie-card [movie]="movie"/>
+                </div>
+            }
+        }
+        @else {
+            <p>no hay pelis</p>
+        }
+    </div>
+</section>

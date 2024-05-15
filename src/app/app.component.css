@@ -1,0 +1,96 @@
+/* HEADER CONT -----------------------------------------------------------------------*/
+
+
+.header-cont {
+    height: 13vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-cont {
+    margin-left: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-header-cont {
+    font-size: 2.5vw;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+/* NAV CONT ----------------------------------------------------------------------*/
+
+.nav-cont {
+    margin-right: 4%;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.list-nav-cont {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.li-nav-cont {
+    padding: 2% 3% 2% 3%;
+    margin: 0;
+    transition: color 0.15s ease-out 0s;
+    border-radius: 18px;
+    cursor: pointer;
+}
+.li-nav-cont:hover {
+    background-color: rgba(240, 248, 255, 0.272);
+}
+
+.li-nav-cont p {
+    font-size: 1.3vw;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+/* MAIN CONTENT -----------------------------------------------------------------*/
+
+.main-cont {
+    height: 80vh;
+    width: 100%;
+}
+
+/*FOOTER CONT---------------------------------------------------------------------*/
+
+.footer-cont {
+    width: 100%;
+    height: 7vh;
+    background-color: rgba(143, 146, 148, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-footer-cont {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-footer-cont p {
+    font-size: 1vw;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}

@@ -1,0 +1,29 @@
+.section-home-cont {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+}
+
+/*SECTION MOVIES*/
+
+.section-movies {
+    width: 66%;
+    height: 100%;
+}
+app-movies {
+    width: 100%;
+    height: 100%;
+}
+
+/*SECTION SHOPPING CART*/
+
+.section-shopping-cart {
+    width: 34%;
+    height: 100%;
+    background-color: rgba(26, 95, 35, 0.283);
+}
+
+app-shopping-cart {
+    width: 100%;
+    height: 100%;
+}

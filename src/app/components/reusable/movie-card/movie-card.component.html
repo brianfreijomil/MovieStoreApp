@@ -1,0 +1,31 @@
+<div class="movie-card-cont">
+    <div 
+        class="card-abs-cont" 
+        (mouseenter)="startTimer()" 
+        (mouseleave)="clearTimer()" 
+        [ngClass]="{'movie-cart-abs-hover': isHovered}">
+
+        <img class="img-card-movie" [src]="movie?.urlImage" alt="image-movie">
+        <div class="info-card-movie" [ngClass]="{'info-card-movie-abs': isHovered}">
+
+            <p class="title-card">{{movie?.name}}</p>
+            <ul class="list-info-movie">
+                <li class="li-info-movie">
+                    <p>{{movie?.genre}}</p>
+                </li>
+                <li class="li-info-movie">
+                    <p>{{movie?.price}}</p>
+                </li>
+                <li class="li-info-movie">
+                    @if (movie!.stock > 0) {
+                        <p>Available</p>
+                    }
+                    @else {
+                        <p>Out of stock</p>
+                    }
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>

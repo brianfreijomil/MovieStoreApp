@@ -1,0 +1,52 @@
+.movies-section-cont {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.movies-section-cont::-webkit-scrollbar {
+    width: 7px;
+    background-color: #1e1e1e00;
+}
+.movies-section-cont::-webkit-scrollbar-thumb {
+    background: #66666600;
+    border-radius: 8px;
+}
+.movies-section-cont::-webkit-scrollbar-thumb:hover {
+    background: #cdcdcd00;
+}
+
+.title-home-cont {
+    width: 88%;
+    height: auto;
+}
+.title-home-cont h2 {
+    margin: 2% 0 5% 0 !important;
+    font-size: 2vw;
+    font-weight: 600;
+}
+
+.list-movies-cont {
+    width: 88%;
+    display: flex;
+    justify-content: start;
+    align-items: stretch;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+.movie-card-cont {
+    width: 22%;
+    height: 35vh;
+    margin: 0 3% 3% 0;
+    cursor: pointer;
+    position: relative;
+}
+
+app-movie-card {
+    height: 100%;
+    width: 100%;
+}
