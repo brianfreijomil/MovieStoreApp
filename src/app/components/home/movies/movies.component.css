@@ -44,6 +44,7 @@
     margin: 0 3% 3% 0;
     cursor: pointer;
     position: relative;
+    background-color: rgba(174, 174, 174, 0.078);
 }
 
 app-movie-card {

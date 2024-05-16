@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { MoviesComponent } from './movies/movies.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
@@ -12,4 +12,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 })
 export class HomeComponent {
 
+  constructor() {
+
+  }
 }

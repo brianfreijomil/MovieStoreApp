@@ -1,1 +1,22 @@
-
+<section class="shopping-cart-cont">
+    <div class="title-section-cont">
+        <h3 class="title-cont">Selected films</h3>
+    </div>
+    <div class="main-cont">
+        <!-- @if(movies.length > 0) { -->
+            <ul class="list-movies-cart">
+                @for (movie of movies; track movie.id) {
+                    <li class="li-movie-cart">
+                        <div class="row-movie-cont">
+                            <p class="name-col">{{ movie.name | truncate: 30 }}</p>
+                            <p class="price-col">${{movie.price}}</p>
+                        </div>
+                    </li>
+                }
+            </ul>
+        <!-- } -->
+        <!-- @else {
+            <p>por el momento ninguna</p>
+        } -->
+    </div>
+</section>

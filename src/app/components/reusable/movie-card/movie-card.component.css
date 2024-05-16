@@ -25,6 +25,7 @@
     width: 160%;
     height: 160%;
     z-index: 1001;
+    box-shadow: 0px 5px 5px 10px rgba(0, 0, 0, 0.427);
 }
 
 .info-card-movie {
@@ -40,8 +41,11 @@
 .info-card-movie-abs {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.826);
+    cursor: default;
+    border: solid 1px rgba(116, 116, 116, 0.221);
 }
 
 .title-card {
@@ -50,8 +54,9 @@
     align-items: center;
     text-align: center;
     width: 90%;
-    font-size: 1.5vw;
-    font-weight: 500;
+    height: 35%;
+    font-size: 1.6vw;
+    font-weight: 600;
     padding: 0;
     margin: 0;
     margin: 5% 0 5% 0;
@@ -60,14 +65,137 @@
 }
 
 .list-info-movie {
+    height: 25%;
+    width: 100%;
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .li-info-movie {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0;
     margin: 0;
+}
+
+.li-info-movie p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-size: 1.1vw;
+    font-weight: 600;
+}
+
+.price-info {
+    color: rgb(50, 188, 50);
+    font-size: 1.3vw !important;
+    font-weight: 700 !important;
+}
+.price-info .span-price {
+    font-size: 0.9vw !important;
+    font-weight: 500 !important;
+    display: flex;
+    align-items: start;
+}
+
+.rent-and-offer-cont {
+    height: 45%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.646);
+}
+
+.btn-rent-cont {
+    display: flex;
+    height: 50%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-rent {
+    border-radius: 20px;
+    width: 70%;
+    height: 50%;
+    color: rgb(16, 16, 16);
+    border: white;
+    background-color: white;
+    box-shadow: 0px 2px 2px 5px rgba(0, 0, 0, 0.427);
+    font-size: 1.2vw;
+    font-weight: 700;
+    cursor: pointer;
+    transition: ease 0.5;
+}
+.btn-rent:hover {
+    border: white;
+    background-color: rgb(217, 217, 217);
+}
+
+.out-of-stock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 50%;
+    color: rgb(195, 35, 35);
+    font-size: 1.2vw;
+    font-weight: 700;
+}
+
+.discount-cont {
+    display: flex;
+    height: 50%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-btn-discount {
+    display: flex;
+    height: 50%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-discount {
+    margin: 0;
+    padding: 0;
+    border-radius: 20px;
+    width: 35%;
+    height: 70%;
+    color: rgb(16, 16, 16);
+    background-color: goldenrod;
+    box-shadow: 0px 2px 2px 5px rgba(0, 0, 0, 0.427);
+    font-size: 1.1vw;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-discount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    font-size: 1vw;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
 }

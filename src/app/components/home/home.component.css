@@ -20,7 +20,6 @@ app-movies {
 .section-shopping-cart {
     width: 34%;
     height: 100%;
-    background-color: rgba(26, 95, 35, 0.283);
 }
 
 app-shopping-cart {
