@@ -12,138 +12,32 @@ import { TruncatePipe } from '../../../pipes/truncate.pipe';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  movies:Movie[] = [
-    {
-      id:1,
-      name:"The Lord of the Rings: The Fellowship of the Ring",
-      genre:"suspence",
-      price:250,
-      stock:100,
-      urlImage:"/assets/images/aliens.jpg"
-    },
-    {
-      id:2,
-      name:"Aliens 2",
-      genre:"suspence",
-      price:250,
-      stock:100,
-      urlImage:"/assets/images/aliens.jpg"
-    },
-    {
-      id:1,
-      name:"The Lord of the Rings: The Fellowship of the Ring",
-      genre:"suspence",
-      price:250,
-      stock:100,
-      urlImage:"/assets/images/aliens.jpg"
-    },
-    {
-      id:1,
-      name:"The Lord of the Rings: The Fellowship of the Ring",
-      genre:"suspence",
-      price:250,
-      stock:100,
-      urlImage:"/assets/images/aliens.jpg"
-    },
-    {
-      id:1,
-      name:"The Lord of the Rings: The Fellowship of the Ring",
-      genre:"suspence",
-      price:250,
-      stock:100,
-      urlImage:"/assets/images/aliens.jpg"
-    },
-    {
-      id:1,
-      name:"The Lord of the Rings: The Fellowship of the Ring",
-      genre:"suspence",
-      price:250,
-      stock:100,
-      urlImage:"/assets/images/aliens.jpg"
-    },
-    {
-      id:1,
-      name:"The Lord of the Rings: The Fellowship of the Ring",
-      genre:"suspence",
-      price:250,
-      stock:100,
-      urlImage:"/assets/images/aliens.jpg"
-    },
-    {
-      id:1,
-      name:"The Lord of the Rings: The Fellowship of the Ring",
-      genre:"suspence",
-      price:250,
-      stock:100,
-      urlImage:"/assets/images/aliens.jpg"
-    },
-    {
-      id:1,
-      name:"The Lord of the Rings: The Fellowship of the Ring",
-      genre:"suspence",
-      price:250,
-      stock:100,
-      urlImage:"/assets/images/aliens.jpg"
-    },
-    {
-      id:1,
-      name:"The Lord of the Rings: The Fellowship of the Ring",
-      genre:"suspence",
-      price:250,
-      stock:100,
-      urlImage:"/assets/images/aliens.jpg"
-    },
-    {
-      id:1,
-      name:"The Lord of the Rings: The Fellowship of the Ring",
-      genre:"suspence",
-      price:250,
-      stock:100,
-      urlImage:"/assets/images/aliens.jpg"
-    },
-    {
-      id:1,
-      name:"The Lord of the Rings: The Fellowship of the Ring",
-      genre:"suspence",
-      price:250,
-      stock:100,
-      urlImage:"/assets/images/aliens.jpg"
-    },
-    {
-      id:1,
-      name:"The Lord of the Rings: The Fellowship of the Ring",
-      genre:"suspence",
-      price:250,
-      stock:100,
-      urlImage:"/assets/images/aliens.jpg"
-    },
-    {
-      id:1,
-      name:"The Lord of the Rings: The Fellowship of the Ring",
-      genre:"suspence",
-      price:250,
-      stock:100,
-      urlImage:"/assets/images/aliens.jpg"
-    },
-    {
-      id:1,
-      name:"The Lord of the Rings: The Fellowship of the Ring",
-      genre:"suspence",
-      price:250,
-      stock:100,
-      urlImage:"/assets/images/aliens.jpg"
-    },
-  ];
+  movies:Movie[] = [];
+  totalToPay:number = 0;
+  discountByStock:number = 45;
 
   constructor(private shoppingCartService:ShoppingCartService) {}
 
   ngOnInit(): void {
-    // this.shoppingCartService.movies.subscribe(
-    //   data => {
-    //     console.log(data);
-    //     this.movies = data;
-    //   }
-    // )
+    this.shoppingCartService.movies.subscribe(
+      data => {
+        console.log(data);
+        this.movies = data;
+        this.setTotalToPay();
+      }
+    )
+  }
+
+  setTotalToPay() {
+    this.totalToPay = 0;
+    this.movies.forEach(m => {
+      if ( m.stock > 100 ) {
+        this.totalToPay += ((m.price * this.discountByStock) / 100);
+      }
+      else {
+        this.totalToPay += m.price;
+      }
+    });
   }
 
 }

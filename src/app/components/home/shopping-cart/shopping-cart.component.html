@@ -9,7 +9,12 @@
                     <li class="li-movie-cart">
                         <div class="row-movie-cont">
                             <p class="name-col">{{ movie.name | truncate: 30 }}</p>
-                            <p class="price-col">${{movie.price}}</p>
+                            @if(movie.stock > 100) {
+                                <p class="price-col">${{(movie.price * discountByStock)/100}}</p>
+                            }
+                            @else {
+                                <p class="price-col">${{movie.price}}</p>
+                            }
                         </div>
                     </li>
                 }
@@ -18,5 +23,9 @@
         <!-- @else {
             <p>por el momento ninguna</p>
         } -->
+    </div>
+    <div class="pay-movies-cont">
+        <p class="text-cant-movies">Selected films : {{movies.length}}</p>
+        <p class="text-total">Total : ${{totalToPay}}</p>
     </div>
 </section>

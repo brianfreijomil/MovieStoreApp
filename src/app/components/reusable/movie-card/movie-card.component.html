@@ -20,7 +20,7 @@
             <div class="rent-and-offer-cont">
                 <div class="btn-rent-cont">
                     @if(movie!.stock > 0) {
-                        <button class="btn-rent">
+                        <button (click)="addMovieToCart()" class="btn-rent">
                             Add to cart
                         </button>
                     }
@@ -29,9 +29,9 @@
                     }
                 </div>
                 <div class="discount-cont">
-                    @if(movie!.stock > 70) {
+                    @if(movie!.stock > 100) {
                         <div class="div-btn-discount">
-                            <p class="btn-discount">50% off</p>
+                            <p class="btn-discount">45% off</p>
                         </div>
                         <p class="text-discount">limited time deal</p>
                     }

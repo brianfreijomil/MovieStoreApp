@@ -24,13 +24,24 @@
 .main-cont {
     margin-top: 3%;
     width: 85%;
-    height: 80%;
+    height: 71%;
     border: solid 2px white;
     background-color: rgba(240, 248, 255, 0.043);
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;   
+}
+
+.pay-movies-cont {
+    height: 9%;
+    width: 85%;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    overflow-y: auto;
+    border-bottom: solid 2px white;
+    border-right: solid 2px white;
+    border-left: solid 2px white;
 }
 
 .main-cont::-webkit-scrollbar {
@@ -46,10 +57,11 @@
 
 .list-movies-cart {
     padding: 0;
-    margin: 0;
+    margin: 3% 0 0 0;
     display: flex;
     flex-direction: column;
     width: 95%;
+    height: auto;
 }
 
 .li-movie-cart {
@@ -96,4 +108,21 @@
     font-weight: 600;
     background-color: rgba(0, 0, 0, 0.354);
     border-radius: 8px;
+}
+
+.pay-movies-cont {
+
+}
+
+.pay-movies-cont p {
+    font-size: 1.2vw;
+    font-weight: 600;
+}
+
+.text-total {
+    color: gold;
+}
+
+.text-cant-movies {
+    color: springgreen;
 }

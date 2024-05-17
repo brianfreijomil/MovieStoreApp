@@ -1,6 +1,7 @@
 import { Component, Input, inject } from '@angular/core';
 import { Movie } from '../../../interfaces/movie';
 import { CommonModule } from '@angular/common';
+import { ShoppingCartService } from '../../../services/shopping-cart.service';
 
 @Component({
   selector: 'app-movie-card',
@@ -15,6 +16,8 @@ export class MovieCardComponent {
   private timer: any;
   @Input() movie: Movie | undefined;
 
+  constructor(private shoppingCartService:ShoppingCartService) {}
+
   startTimer() {
     this.timer = setTimeout(() => {
       this.isHovered = true;
@@ -24,6 +27,10 @@ export class MovieCardComponent {
   clearTimer() {
     clearTimeout(this.timer);
     this.isHovered = false;
+  }
+
+  addMovieToCart() {
+    this.shoppingCartService.addMovieToCart(this.movie!);
   }
 
 }
