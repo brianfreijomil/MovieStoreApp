@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ShoppingCartService } from '../../../services/shopping-cart.service';
 import { Movie } from '../../../interfaces/movie';
 import { TruncatePipe } from '../../../pipes/truncate.pipe';
+import { ModalPayComponent } from '../../reusable/modal-pay/modal-pay.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-shopping-cart',
   standalone: true,
-  imports: [TruncatePipe],
+  imports: [TruncatePipe, ModalPayComponent, CommonModule],
   templateUrl: './shopping-cart.component.html',
   styleUrl: './shopping-cart.component.css'
 })
@@ -15,6 +17,7 @@ export class ShoppingCartComponent implements OnInit {
   movies:Movie[] = [];
   totalToPay:number = 0;
   discountByStock:number = 45;
+  modalPayEnable:boolean = false;
 
   constructor(private shoppingCartService:ShoppingCartService) {}
 
@@ -28,6 +31,12 @@ export class ShoppingCartComponent implements OnInit {
     )
   }
 
+  removeMovieFromCart(movieId:number) {
+    this.movies = this.movies.filter(m => m.id !== movieId);
+    this.setTotalToPay();
+    this.shoppingCartService.removeMovieToCart(movieId);
+  }
+
   setTotalToPay() {
     this.totalToPay = 0;
     this.movies.forEach(m => {
@@ -38,6 +47,10 @@ export class ShoppingCartComponent implements OnInit {
         this.totalToPay += m.price;
       }
     });
+  }
+
+  setModalPay(status:boolean) {
+    this.modalPayEnable = status;
   }
 
 }

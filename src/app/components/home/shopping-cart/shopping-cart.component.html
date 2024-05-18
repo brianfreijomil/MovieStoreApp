@@ -3,12 +3,15 @@
         <h3 class="title-cont">Selected films</h3>
     </div>
     <div class="main-cont">
-        <!-- @if(movies.length > 0) { -->
+        @if(movies.length > 0) {
             <ul class="list-movies-cart">
                 @for (movie of movies; track movie.id) {
                     <li class="li-movie-cart">
                         <div class="row-movie-cont">
                             <p class="name-col">{{ movie.name | truncate: 30 }}</p>
+                            <div class="cancel-col">
+                                <img (click)="removeMovieFromCart(movie.id)" class="img-cancel-btn" src="/assets/images/cancel_circle_close_delete_discard_file_x_icon_123219.svg" alt="svg-cancel-btn">
+                            </div>
                             @if(movie.stock > 100) {
                                 <p class="price-col">${{(movie.price * discountByStock)/100}}</p>
                             }
@@ -19,13 +22,23 @@
                     </li>
                 }
             </ul>
-        <!-- } -->
-        <!-- @else {
-            <p>por el momento ninguna</p>
-        } -->
+        }
+        @else {
+            <div class="no-movies-cont">
+                <p>You have not selected any movie</p>
+            </div>
+        }
     </div>
     <div class="pay-movies-cont">
-        <p class="text-cant-movies">Selected films : {{movies.length}}</p>
+        <p class="text-cant-movies">Films : {{movies.length}}</p>
         <p class="text-total">Total : ${{totalToPay}}</p>
+        @if (movies.length > 0) {
+            <div class="btn-cont">
+                <button (click)="setModalPay(true)" class="btn-pay">
+                    Pay
+                </button>
+            </div>
+        }
     </div>
 </section>
+<app-modal-pay (modalStatus)="setModalPay($event)" [ngClass]="{'modal-pay-show': modalPayEnable}"/>

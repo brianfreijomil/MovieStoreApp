@@ -16,6 +16,8 @@ export class MovieCardComponent {
   private timer: any;
   @Input() movie: Movie | undefined;
 
+  discountByStock:number = 45;  
+
   constructor(private shoppingCartService:ShoppingCartService) {}
 
   startTimer() {

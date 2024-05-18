@@ -14,7 +14,17 @@
                     <p>{{movie?.genre}}</p>
                 </li>
                 <li class="li-info-movie">
-                    <p class="price-info"><span class="span-price">$</span>{{movie?.price}}</p>
+                    @if (movie!.stock > 100) {
+                        <p class="price-info price-info-discount">
+                            <span class="span-price">$</span>{{movie?.price}}
+                        </p>
+                        <p class="p-new-price">
+                            <span class="span-price">$</span> {{(movie!.price * discountByStock)/100}}
+                        </p>
+                    }
+                    @else {
+                        <p class="price-info"><span class="span-price">$</span>{{movie?.price}}</p>
+                    }
                 </li>
             </ul>
             <div class="rent-and-offer-cont">
@@ -31,7 +41,7 @@
                 <div class="discount-cont">
                     @if(movie!.stock > 100) {
                         <div class="div-btn-discount">
-                            <p class="btn-discount">45% off</p>
+                            <p class="btn-discount">{{discountByStock}}% off</p>
                         </div>
                         <p class="text-discount">limited time deal</p>
                     }

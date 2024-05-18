@@ -21,6 +21,10 @@ export class ShoppingCartService {
         }
     }
 
+    removeMovieToCart(movieId:number) {
+        this._movies = this._movies.filter(m => m.id !== movieId);
+    }
+
     getMovieById(id: number) {
         return this._movies.find(movie => movie.id==id);
     }

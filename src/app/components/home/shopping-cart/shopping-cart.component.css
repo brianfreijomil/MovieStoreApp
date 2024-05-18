@@ -33,15 +33,18 @@
     overflow-y: auto;   
 }
 
-.pay-movies-cont {
-    height: 9%;
-    width: 85%;
+.no-movies-cont {
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    border-bottom: solid 2px white;
-    border-right: solid 2px white;
-    border-left: solid 2px white;
+}
+
+.no-movies-cont p {
+    font-size: 1vw;
+    font-weight: 300;
+    color: gray;
 }
 
 .main-cont::-webkit-scrollbar {
@@ -84,7 +87,7 @@
 
 .name-col {
     height: 100%;
-    width: 80%;
+    width: 72%;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -93,6 +96,25 @@
     color: rgb(16,16,16);
     font-size: 1.2vw;
     font-weight: 600;
+}
+
+.cancel-col {
+    height: 100%;
+    width: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-cancel-btn {
+    width: 3.3vh;
+    height: 3.3vh;
+    cursor: pointer;
+    transition: ease 0.5;
+}
+.img-cancel-btn:hover {
+    width: 4.5vh;
+    height: 4.5vh;
 }
 
 .price-col {
@@ -106,23 +128,80 @@
     color: rgb(209, 181, 27);
     font-size: 1.4vw;
     font-weight: 600;
-    background-color: rgba(0, 0, 0, 0.354);
+    background-color: rgba(0, 0, 0, 0.553);
     border-radius: 8px;
 }
 
 .pay-movies-cont {
-
+    height: 9%;
+    width: 85%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: solid 2px white;
+    border-right: solid 2px white;
+    border-left: solid 2px white;
 }
 
 .pay-movies-cont p {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.2vw;
     font-weight: 600;
 }
 
 .text-total {
     color: gold;
+    width: 40%;
 }
 
 .text-cant-movies {
     color: springgreen;
+    width: 30%;
+}
+
+.btn-cont {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-pay {
+    width: 80%;
+    color: white;
+    background-color: rgb(205, 46, 72);
+    height: 60%;
+    border-radius: 20px;
+    border: rgb(205, 46, 72);
+    font-size: 1.1vw;
+    font-weight: 500;
+    cursor: pointer;
+}
+.btn-pay:hover {
+    /* background-color: rgb(235, 133, 150); */
+    border: solid 2px white;
+}
+
+/*MODAL PAY STYLE*/
+app-modal-pay {
+    display: none;
+    width: 100vw;
+    height: 80vh;
+    position: absolute;
+    top: 13vh;
+    left: 0;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-pay-show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
